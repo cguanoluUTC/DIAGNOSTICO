@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+<meta charset="utf-8">
+<body>
+<h3>MI LOGEO </h3>
+	
+<form name="formLogin" action="@{Usuarios.Actualizar()}" method = "post">
+<input type ="hidden" name="id" value="${persona.id}">
+<table>
+<tr>
+	<td><label>NOMBRE:</label></td>
+	<td><input name="UserName" type="text" id="user"  value="${persona.UserName}"/></td>
+</tr>
+
+<tr>
+	<td><label>APELLIDO:</label></td>
+	<td><input name="Apellido" type="text" id="password" value="${persona.Apellido}" /><br></td>
+</tr>
+<tr>
+	<td><label>DIRECCIÓN:</label></td>
+	<td><input name="Direccion" type="text" id="password"value="${persona.Direccion}" /><br></td>
+</tr>
+<tr>
+	<td><label>TELÉFONO:</label></td>
+	<td><input name="Telefono" type="text" id="password" value="${persona.Telefono}" /><br></td>
+</tr>
+<tr>
+	<td><label>CONTRASEÑA:</label></td>
+	<td><input name="Password" type="password" id="password" value="" /><br></td>
+</tr> 
+
+<tr>
+	<td colspan="2"><input type="submit" id="registro" value="GUARDAR"/></td>
+</tr> 
+</table>	
+</form>
+
+
+</body>

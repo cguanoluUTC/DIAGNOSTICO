@@ -1,0 +1,67 @@
+#{extends 'main.html' /}
+<meta charset="utf-8">
+
+<style type="text/css">
+/*Botones de navegacion*/
+	nav {
+		margin-top: 20px;
+		text-align: center;
+		padding: 10px;
+	}
+
+	nav a{
+		font-size: 16px;
+		display: inline-block;
+		color: #FCFCFC;
+		background-color: #244B68;
+		width: 150px;
+		height: 40px;
+		padding: 11px;
+		box-sizing: border-box;
+		text-decoration: none;
+		border-radius: 10px;
+	}
+
+	nav a:hover{
+		color: #fcfcfc;
+		background: #1dabb8;
+	}
+
+</style>
+                    <nav>
+                    
+  					<a href= /Registro>Imagenes</a>
+  					<a href= /Usuario>Perfil</a>
+  					<a href= /Productos>Productos</a>
+  					 <a href= /Inicio>Salir</a>
+  					</nav>
+
+
+
+<center><h3>MI PERFIL</h3>
+#{if usuarios}
+
+<table border="1">
+<tr>
+
+<th>Nombre</th>
+<th>Contraseña</th>
+<th>Eliminar datos</th>
+<th>Actualizar datos</th>
+
+</tr>
+#{list items: usuarios,as:"usuario"}
+<tr>
+	<td>${usuario.UserName}</td>
+	<td>${usuario.Password}</td>
+	<td><a href="@{Usuarios.eliminar(usuario.id)}"><input type="button" id="Eliminar" name="Eliminar" value="Eliminar" style="color:red; height:30px; width:110px"  /></a></td>
+	<td><a href="@{Usuarios.editar(usuario.id)}"><input type="button" id="Editar" name="Editar" value="Editar"style="color:red; height:30px; width:130px"/></a></td>
+</tr>
+#{/list}
+</table>
+#{/if}
+#{else}
+ <h1>no existe datos</h1>
+ #{/else}
+ </center>
+ <br><br>
